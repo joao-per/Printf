@@ -29,4 +29,4 @@ The library is written in C language and thus needs the **`gcc` compiler** and s
 ```shell
 git clone https://github.com/joao-per/42-printf.git
 ```
-There are also some basics tests that you can try in your own printf
+Thereare also some basics tests that you can try in your own printf. Just compile the tester with your output.
