@@ -1,5 +1,5 @@
 <h1 align="center">
-	FT_PRINTF 🖨️
+	🖨️ FT_PRINTF 🖨️
 </h1>
 
 <p align="center">
@@ -14,7 +14,7 @@
 
 ## 🗣️ About
 
-> This project tries to replicate the original printf.
+This project is pretty straight foward. I tried to replicate the original printf.
 
 For detailed information, refer to the [**subject of this project**](https://github.com/joao-per/42-printf/blob/main/Subject.pdf).
 
