@@ -14,7 +14,7 @@
 
 ## 🗣️ About
 
-> _This project is pretty straight forward. You will recode printf. Hopefully you will be able to reuse it in future project without the fear of being flagged as a cheater. You will mainly learn how to use variadic arguments._
+> _Putstring and putnbr aren't just enough._
 
 For detailed information, refer to the [**subject of this project**](https://github.com/Diogo13Antunes/42Cursus_Printf/blob/main/Subject.pdf).
 
@@ -27,5 +27,5 @@ The library is written in C language and thus needs the **`gcc` compiler** and s
 ### Instructions
 
 ```shell
-git clone https://github.com/Diogo13Antunes/42Cursus_Printf.git
+git clone https://github.com/joao-per/42-printf.git
 ```
