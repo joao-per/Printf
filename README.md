@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-	<b><i>This project tries to replicate the original printf.</i></b>
+	<b><i>Putstring and putnbr aren't just enough.</i></b>
 </p>
 
 <p align="center">
@@ -14,7 +14,7 @@
 
 ## 🗣️ About
 
-> _Putstring and putnbr aren't just enough._
+> This project tries to replicate the original printf.
 
 For detailed information, refer to the [**subject of this project**](https://github.com/joao-per/42-printf/blob/main/Subject.pdf).
 
