@@ -1,9 +1,9 @@
 <h1 align="center">
-	FT_PRINTF
+	FT_PRINTF 🖨️
 </h1>
 
 <p align="center">
-	<b><i>Putstring and putnbr aren't just enough.</i></b>
+	<b><i>Because putstring and putnbr are not enough 📜.</i></b>
 </p>
 
 <p align="center">
