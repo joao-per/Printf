@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-#Variables
+# Variáveis
 
 NAME		= libftprintf.a
 INCLUDE		= include
@@ -24,7 +24,7 @@ AR			= ar rcs
 
 # Cores
 
-DEF_COLOR = \033[0;39m
+DEFAULT = \033[0;39m
 GRAY = \033[0;90m
 RED = \033[0;91m
 GREEN = \033[0;92m
@@ -53,10 +53,10 @@ $(NAME):	$(OBJ)
 			@cp libft/libft.a .
 			@mv libft.a $(NAME)
 			@$(AR) $(NAME) $(OBJ)
-			@echo "$(GREEN)ft_printf compiled!$(DEF_COLOR)"
+			@echo "$(GREEN)ft_printf compiled!$(DEFAULT)"
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c | $(OBJF)
-			@echo "$(YELLOW)Compiling: $< $(DEF_COLOR)"
+			@echo "$(YELLOW)Compiling: $< $(DEFAULT)"
 			@$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
 
 $(OBJF):
@@ -65,16 +65,16 @@ $(OBJF):
 clean:
 			@$(RM) -rf $(OBJ_DIR)
 			@make clean -C $(LIBFT)
-			@echo "$(BLUE)ft_printf object files cleaned!$(DEF_COLOR)"
+			@echo "$(BLUE)ft_printf object files cleaned!$(DEFAULT)"
 
 fclean:		clean
 			@$(RM) -f $(NAME)
 			@$(RM) -f $(LIBFT)/libft.a
-			@echo "$(CYAN)ft_printf executable files cleaned!$(DEF_COLOR)"
-			@echo "$(CYAN)libft executable files cleaned!$(DEF_COLOR)"
+			@echo "$(CYAN)ft_printf executable files cleaned!$(DEFAULT)"
+			@echo "$(CYAN)libft executable files cleaned!$(DEFAULT)"
 
 re:			fclean all
-			@echo "$(GREEN)Cleaned and rebuilt everything for ft_printf!$(DEF_COLOR)"
+			@echo "$(GREEN)Cleaned and rebuilt everything for ft_printf!$(DEFAULT)"
 
 norm:
 			@norminette $(SRC) $(INCLUDE) $(LIBFT) | grep -v Norme -B1 || true

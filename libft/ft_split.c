@@ -6,13 +6,13 @@
 /*   By: joao-per <joao-per@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 12:21:47 by joao-per          #+#    #+#             */
-/*   Updated: 2022/09/19 19:24:58 by joao-per         ###   ########.fr       */
+/*   Updated: 2022/10/16 22:07:48 by joao-per         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-//counts every word delimited by the "char c"
+//conta todas as palavras delimitadas pelo "char c"
 static int	word_count(const char *str, char c)
 {
 	int	words;
