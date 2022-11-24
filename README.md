@@ -4,7 +4,11 @@
 
 <p align="center">
 	<b><i>Because putstring and putnbr are not enough 📜.</i></b>
+
 </p>
+<div align="center">
+<img alt="Printf" src="https://github.com/joao-per/joao-per/blob/main/Badges/Printf.png" />
+</div>
 
 <p align="center">
 	<img alt="GitHub code size in bytes" src="https://img.shields.io/badge/size-83%2C6%20KB-blue" />
