@@ -1,28 +1,15 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: joao-per <joao-per@student.42.fr>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/10/12 15:37:44 by joao-per          #+#    #+#              #
-#    Updated: 2022/10/12 15:37:44 by joao-per         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
+# Variables
+NAME = libftprintf.a
 
-# Variáveis
+SRC = ft_printf variables
+OBJ_DIR = Obj
 
-NAME		= libftprintf.a
-INCLUDE		= include
-LIBFT		= libft
-SRC_DIR		= src/
-OBJ_DIR		= obj/
-CC			= gcc
-CFLAGS		= -Wall -Werror -Wextra -I
-RM			= rm -f
-AR			= ar rcs
+CC = gcc
+CFLAGS = -Wall -Werror -Wextra -I.
 
-# Cores
+RM = rm -f
+
+# Colors
 
 DEFAULT = \033[0;39m
 GRAY = \033[0;90m
@@ -34,49 +21,31 @@ MAGENTA = \033[0;95m
 CYAN = \033[0;96m
 WHITE = \033[0;97m
 
-#Sources
+all:$(NAME)
 
-SRC_FILES	=	ft_printf ft_printf_utils ft_print_ptr ft_print_unsigned ft_print_hex
+$(NAME): $(OBJ_DIR) $(SRC:=.o)
+		@ar rcs $(NAME) $(OBJ_DIR)/*.o
+		@echo "$(GREEN)ft_printf compiled!$(DEFAULT)"
 
+$(OBJ_DIR):
+		@mkdir -p $(OBJ_DIR)
 
-SRC 		= 	$(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
-OBJ 		= 	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
+$(SRC:=.o): %.o: %.c
+		$(CC) $(CFLAGS) -c $< -o $(OBJ_DIR)/$@
 
-###
-
-OBJF		=	.cache_exists
-
-all:		$(NAME)
-
-$(NAME):	$(OBJ)
-			@make -C $(LIBFT)
-			@cp libft/libft.a .
-			@mv libft.a $(NAME)
-			@$(AR) $(NAME) $(OBJ)
-			@echo "$(GREEN)ft_printf compiled!$(DEFAULT)"
-
-$(OBJ_DIR)%.o: $(SRC_DIR)%.c | $(OBJF)
-			@echo "$(YELLOW)Compiling: $< $(DEFAULT)"
-			@$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
-
-$(OBJF):
-			@mkdir -p $(OBJ_DIR)
+bonus: fclean all
 
 clean:
-			@$(RM) -rf $(OBJ_DIR)
-			@make clean -C $(LIBFT)
-			@echo "$(BLUE)ft_printf object files cleaned!$(DEFAULT)"
+		$(RM) $(OBJ_DIR)/*.o
+		@echo "$(BLUE)ft_printf object files cleaned!$(DEFAULT)"
 
-fclean:		clean
-			@$(RM) -f $(NAME)
-			@$(RM) -f $(LIBFT)/libft.a
-			@echo "$(CYAN)ft_printf executable files cleaned!$(DEFAULT)"
-			@echo "$(CYAN)libft executable files cleaned!$(DEFAULT)"
+fclean: clean
+		$(RM) $(NAME)
+		$(RM) -r $(OBJ_DIR)
+		@echo "$(CYAN)libft executable file cleaned!$(DEFAULT)"
+		@echo "$(RED)ft_printf objects folder deleted!$(DEFAULT)"
 
-re:			fclean all
-			@echo "$(GREEN)Cleaned and rebuilt everything for ft_printf!$(DEFAULT)"
+re: 	fclean $(NAME)
+		@echo "$(GREEN)Cleaned and rebuilt everything for ft_printf!$(DEFAULT)"
 
-norm:
-			@norminette $(SRC) $(INCLUDE) $(LIBFT) | grep -v Norme -B1 || true
-
-.PHONY:		all clean fclean re norm
+.PHONY:		all clean fclean re
