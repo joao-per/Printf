@@ -57,8 +57,6 @@ int	ft_putnbr(long long n, int flag)
 		n *= -1;
 		len += ft_putchar('-');
 	}
-	if (flag == 3 && n >= 0)
-		len += ft_putchar(' ');
 	flag = 0;
 	len += ft_putnbrbase(n, DEC, 0, flag);
 	return (len);

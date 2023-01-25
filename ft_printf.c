@@ -45,8 +45,6 @@ int ft_flags(char type)
 		flag = 1;
 	if (type == '#')
 		flag = 2;
-	if (flag == ' ')
-		flag = 3;
 	return (flag);
 }
 
