@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: joao-per <joao-per@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/01/25 13:16:42 by joao-per          #+#    #+#              #
+#    Updated: 2023/01/25 13:16:42 by joao-per         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 # Variables
 NAME = libftprintf.a
 
@@ -23,27 +35,20 @@ WHITE = \033[0;97m
 
 all:$(NAME)
 
-$(NAME): $(OBJ_DIR) $(SRC:=.o)
-		@ar rcs $(NAME) $(OBJ_DIR)/*.o
+$(NAME): $(SRC:=.o)
+		@ar rcs $(NAME) $(SRC:=.o)
 		@echo "$(GREEN)ft_printf compiled!$(DEFAULT)"
 
-$(OBJ_DIR):
-		@mkdir -p $(OBJ_DIR)
-
-$(SRC:=.o): %.o: %.c
-		$(CC) $(CFLAGS) -c $< -o $(OBJ_DIR)/$@
 
 bonus: fclean all
 
 clean:
-		$(RM) $(OBJ_DIR)/*.o
+		$(RM) $(SRC:=.o)
 		@echo "$(BLUE)ft_printf object files cleaned!$(DEFAULT)"
 
 fclean: clean
 		$(RM) $(NAME)
-		$(RM) -r $(OBJ_DIR)
-		@echo "$(CYAN)libft executable file cleaned!$(DEFAULT)"
-		@echo "$(RED)ft_printf objects folder deleted!$(DEFAULT)"
+		@echo "$(RED)libftprintf.a deleted!$(DEFAULT)"
 
 re: 	fclean $(NAME)
 		@echo "$(GREEN)Cleaned and rebuilt everything for ft_printf!$(DEFAULT)"
