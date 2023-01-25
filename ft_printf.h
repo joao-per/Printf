@@ -20,7 +20,7 @@
 # include <stdlib.h>
 # include <stdarg.h>
 
-/*				FT_PRINTF				*/
+/*				FT_PRINTF					*/
 int		ft_printf(const char *str, ...);
 
 /*				EXTRA FUNCTIONS				*/
